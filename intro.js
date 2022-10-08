@@ -15,3 +15,9 @@ var this$is$not$true='false'
 console.log(typeof(this$is$not$true))
 var number=56
 console.log(typeof(number))
+console.log(true&&true)
+console.log(false||true)
+var age=25
+console.log(age>=0&&age<=120)
+var speed=130
+console.log(speed>=60&&speed<=120)
