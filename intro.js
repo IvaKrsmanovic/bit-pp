@@ -21,3 +21,18 @@ var age=25
 console.log(age>=0&&age<=120)
 var speed=130
 console.log(speed>=60&&speed<=120)
+var a; 
+console.log(typeof a);
+var s = '1s'; 
+console.log(typeof s++);
+console.log(s++)
+console.log(!!"false");
+console.log(!!undefined);
+console.log(typeof -Infinity);
+console.log(typeof 10 % "0");
+console.log(!undefined === !null);
+console.log(false === "");
+typeof "2E+2";
+console.log(3e+3)
+var a=3e+3
+console.log(a++)
