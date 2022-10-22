@@ -1,3 +1,5 @@
+// Loops - uvodno predavanje
+
 var i = 0;
 while (i<= 10) {
     console.log(i);
@@ -59,13 +61,15 @@ for (var element in negativeNumbers) {
     }
 }
 
+// Exercises.txt
+
 // 1. Write a code to find the sum of first 10 natural numbers and show that sum on screen.
 
 sum=0
 for (var a = 0; a <= 10; a++) {
-    sum += a
+    sum += a;
     }
-console.log('Zbir prvih 10 prirodni projeva je',sum)
+console.log('Zbir prvih 10 prirodni projeva je',sum);
 
 // 2. Write a code to display the cube of the number up to given an integer and show it on screen. Example: 2 up to cube equals 8.
 
@@ -73,7 +77,7 @@ num=2
 op=4
 res=1
 for (var a = 0; a <= op-1; a++) {
-    res *= num
+    res *= num;
     }
 console.log(res)
 
@@ -83,32 +87,32 @@ console.log(res)
 num=6
 res=1
 for (a=1; a<=num; a++) {
-    res *= a
+    res *= a;
 }
 
-console.log(res)
+console.log(res);
 
 // 4. Write a code to display the n terms of even natural number and their sum.
 // Example:
 // Input number of terms - 5. Expected output: "The even numbers are 2, 4, 6, 8, 10".
 
-n = 6
-x = []
-sum = 0
+n = 6;
+x = [];
+sum = 0;
 
 for (a = 1; a <= n * 2; a++) {
     if (a % 2 == 0) {
-        x.push(a)
-        sum += a
+        x.push(a);
+        sum += a;
     }
 }
-console.log('The even numbers are', x, 'and the sum is', sum)
+console.log('The even numbers are', x, 'and the sum is', sum);
 
 // 5.Write a code to calculate the sum of digits in a number and show that sum on screen. 
 // Example: "Sum of digits in number 232 is 7".
 
-var value = 2568,
-    sum = 0;
+var value = 2568;
+var sum = 0;
 
 while (value) {
     sum += value % 10;
@@ -120,25 +124,24 @@ console.log(sum);
 // 6. Write a code to count all letters in a word and show that count on screen. 
 // Example: Given word is "Eclip542se". Result should be something like "There is 7 letters in this word".
 
-var word = "123";
+var word = "ab12f3";
 var count = 0;
-var uslov=/[a-z]/gi
+var uslov=/[a-z]/gi;
 
-// if (word.match(uslov).length==0) {
-//     for (i=0; i<(word.match(uslov)).length; i++) {
-//         count++;
-//     }}
-//     else {
-//     console.log('Nema slova u reci!')
-// }
-
-// console.log(count)
-
-for (i=0; i<(word.match(uslov)).length; i++) {
+if (word.match(uslov)) {
+    for (i = 0; i < (word.match(uslov)).length; i++) {
         count++;
+    } if (count === 1) {
+        console.log(count + ' slovo');
     }
-    
-console.log(count)
+    else {
+        console.log(count + ' slova');
+    }
+}
+else {
+    console.log('Nema slova u reci!');
+}
+
 
 // 7. Write a code to find on which index in array is letter "C" and show that index on screen. 
 // Given array is: [1, 3, 32, $, g, h, t, s, c, 66, 23, h2].
@@ -151,6 +154,8 @@ for (var i = 0; i < b.length; i++) {
             console.log(i)
         } 
 }}
+
+// Exercises_Loops.docx
 
 //1. Write a for loop that will iterate from 0 to 15. For each iteration, it will check if the current
 // number is odd or even, and display a message to the screen.
@@ -219,26 +224,26 @@ for(i=0; i<=20; i++){
 
 console.log(sum)    
 
-// Write a program that computes average marks of the following students. Then use this
+// 7. Write a program that computes average marks of the following students. Then use this
 // average to determine the corresponding grade.
 
-var David=80
-var Marko=77
-var Dany=88
-var John=95
-var Thomas=68
+var David=80;
+var Marko=77;
+var Dany=88;
+var John=95;
+var Thomas=68;
 
-students=[David,Marko,Dany,John,Thomas]
+students=[David,Marko,Dany,John,Thomas];
 
-console.log(students)
-sum=0
+console.log(students);
+sum=0;
 
 for(i=0;i<students.length;i++){
-    sum+=students[i]
+    sum+=students[i];
 }
 
-prosek=sum/(students.length)
-console.log(prosek)
+prosek=sum/(students.length);
+console.log(prosek);
 
 // The grades are computed as follows :
 
@@ -250,15 +255,15 @@ console.log(prosek)
 // &lt; 100% A
 
 if (prosek>90) {
-    console.log('A')
+    console.log('A');
 } else if (prosek>80){
-    console.log('B')
+    console.log('B');
 } else if (prosek>70){
-    console.log('C')
+    console.log('C');
 } else if (prosek>60){
-    console.log('D')
+    console.log('D');
 } else {
-        console.log('F')
+        console.log('F');
 }
 
 // 8. Write a program that uses console.log to print all the numbers from 1 to 100, with two
@@ -281,6 +286,8 @@ for (i=0; i<=100; i++) {
         console.log(i);
     }
 }
+
+// Exercises_Loops 2.docx
 
 // 1. Write a program that checks if a given element e is in the array a.
 // Input: e = 3, a = [5, -4.2, 3, 7]
@@ -445,21 +452,25 @@ console.log(a)
 
 // 10. Write a program that inserts a given element e on the given position p in the array a. If
 // the value of the position is greater than the array length, print the error message.
-var e = 78;
-var p = 3; 
-var a = [2, -2, 33, 12, 5, 8];
-var niz=[]
 
-for (i = 0; i < a.length; i++) {
-    if (a.length - 1 > p) {
-        if (i < p) {
+var e = 78;
+var p = 3;
+var a = [2, -2, 33, 12, 5, 8];
+var niz = [];
+
+if (a.length - 1 > p) {
+    for (i = 0; i <= p; i++) {
+        if (i != p) {
             niz.push(a[i]);
-        } else if (i = p) {
+        } else {
             niz.push(e);
-        } else if (i > p) {
-            niz.push(a[i]);
         }
-    } else {
-        console.log('Error')
     }
+    for (j = p; j < a.length; j++) {
+        niz.push(a[j]);
+    }
+    console.log(niz);
+}
+else {
+    console.log('Error');
 }
