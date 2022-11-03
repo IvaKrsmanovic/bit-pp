@@ -73,10 +73,10 @@ console.log('Zbir prvih 10 prirodni projeva je',sum);
 
 // 2. Write a code to display the cube of the number up to given an integer and show it on screen. Example: 2 up to cube equals 8.
 
-num=2
-op=4
+num=3
+op=3
 res=1
-for (var a = 0; a <= op-1; a++) {
+for (var a = 1; a <= op; a++) {
     res *= num;
     }
 console.log(res)
@@ -120,6 +120,7 @@ while (value) {
 }
 
 console.log(sum);
+
 
 // 6. Write a code to count all letters in a word and show that count on screen. 
 // Example: Given word is "Eclip542se". Result should be something like "There is 7 letters in this word".
@@ -190,7 +191,7 @@ for (i=0; i<a.length; i++){
     prod*=a[i];
 }
 
-console.log(sum,prod)
+console.log('Zbir brojeva u nizu je',sum,'a proizvod je',prod)
 
 //4. Write a program which prints the elements of the following array as a single string. 
 
@@ -227,23 +228,24 @@ console.log(sum)
 // 7. Write a program that computes average marks of the following students. Then use this
 // average to determine the corresponding grade.
 
-var David=80;
-var Marko=77;
-var Dany=88;
-var John=95;
-var Thomas=68;
+var input = [
+    ['David', 80],
+    ['Marko', 77],
+    ['Dany', 88],
+    ['John', 95],
+    ['Thomas', 68]]
 
-students=[David,Marko,Dany,John,Thomas];
-
-console.log(students);
 sum=0;
 
-for(i=0;i<students.length;i++){
-    sum+=students[i];
+for(i=0;i<input.length;i++){
+    sum+=input[i][1];
 }
 
-prosek=sum/(students.length);
-console.log(prosek);
+if (sum>0){
+    average=sum/input.length;
+}
+
+console.log(average);
 
 // The grades are computed as follows :
 
@@ -254,13 +256,13 @@ console.log(prosek);
 // &lt; 90% B
 // &lt; 100% A
 
-if (prosek>90) {
+if (average>90) {
     console.log('A');
-} else if (prosek>80){
+} else if (average>80){
     console.log('B');
-} else if (prosek>70){
+} else if (average>70){
     console.log('C');
-} else if (prosek>60){
+} else if (average>60){
     console.log('D');
 } else {
         console.log('F');
@@ -274,13 +276,13 @@ if (prosek>90) {
 
 for (i=0; i<=100; i++) {
     if(i%3==0 && i%5!=0){
-        console.log('Fizz');
+        console.log('Fizz',i);
     }
     else if(i%5==0 && i%3!=0){
-        console.log('Buzz');
+        console.log('Buzz',i);
     }
     else if (i%5==0 && i%3==0) {
-        console.log('FizzBuzz');
+        console.log('FizzBuzz',i);
     }
     else {
         console.log(i);
@@ -294,13 +296,23 @@ for (i=0; i<=100; i++) {
 // Output: yes
 
 var e = 3;
-var a = [5, -4.2, 3, 7];
+var a = [5, -4.2, 8, 7];
+var contains = false
+var index=0
 
-for (i=0; i<a.length; i++){
-    if (a[i]===e){
-        console.log('Jeste deo niza');
+for (index=0; index<a.length; index++){
+    if (a[index]===e){
+        contains=true;
+        break;
     }
 }
+
+if (contains){
+    console.log('Jeste deo niza');
+} else {
+    console.log('Nije deo niza');
+}
+
 
 if(a.includes(e)){
     console.log('Jeste deo niza');
@@ -332,15 +344,17 @@ console.log(niz);
 
 var a=[4, 2, 2, -1, 6];
 
-min = Infinity;
+var min=a[0];
+var pozicija;
 
 for (i=0; i<a.length; i++) {
     if (a[i] < min) {
     min = a[i];
+    pozicija = i;
 }
 }
 
-console.log(min);
+console.log('Minimum je', min, 'na poziciji', pozicija);
 
 // 4. Write a program that finds the first element larger than minimum and prints out its value.
 // Input array: [4, 2, 2, -1, 6]
@@ -348,8 +362,8 @@ console.log(min);
 
 var a=[4, 2, 2, -1, 6, 1.5, 0.2];
 
-min = Infinity;
-sec = 0;
+min = a[0];
+sec = a[0];
 
 for (i = 0; i < a.length; i++) {
     if (a[i] < min) {
@@ -393,6 +407,7 @@ for (i=0; i<a.length; i++){
         rez=true;
     } else {
         rez=false;
+        break;
     }
 }
 
@@ -419,6 +434,21 @@ for (i = 0; i < a.length; i++) {
 }
 
 console.log(niz)
+
+a = [4, 5, 6, 2];
+b = [3, 8, 11, 9];
+niz = []
+
+for (i = 0; i < (a.length+b.length); i++) {
+    if (i==0) {
+        niz[i]=a[i]    
+    } else {
+    niz[i+1]=a[i]
+    niz[(i)]=b[i-1]
+}}
+
+console.log(niz)
+
 
 // 8. Write a program that concatenates two arrays.
 // Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
