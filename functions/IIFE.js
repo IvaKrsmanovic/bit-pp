@@ -52,6 +52,24 @@ var result = (function (word) {
 
 result;
 
+var transformed = (function (sentence, letter, replacementCharacter) {
+    var counter = 0;
+    var result = '';
+    for (var i=0; i<sentence.length; i++){
+        if (sentence[i].toLowerCase()!==letter.toLowerCase()){
+            result += sentence[i];
+            continue;
+        }
+
+        result += replacementCharacter;
+        counter++;
+    }
+
+    return `${result}, ${counter}`;
+})('programMing', 'm', '*');
+
+console.log(transformed);
+
 // 4. Write a function with parameters name and surname that returns a function that
 // suggests an email in the form name.surname@gmail.com.
 // Input: pera peric
@@ -73,3 +91,106 @@ result('pera', 'peric');
 // Input: 034
 // Output: 28
 
+var getNumberToDecimalConverter = function (base) {
+    if (!base) {
+        return 0;
+    }
+
+    function convert (number) {
+        return parseInt (number, base);
+    }
+
+    return function (value) {
+        return convert(value);
+    }
+}
+
+var octalToDecimal = getNumberToDecimalConverter(8);
+var num = octalToDecimal('034');
+console.log(num);
+
+// 6. Write a function that checks if a given string is a valid password.
+
+function checkType(data, type){
+    if (!data || typeof data != type){
+        return false;
+    }
+
+    return true;
+}
+
+
+var passwordChecker = function (array, success, error){
+
+    if(!checkType(success, 'function') || !checkType(error, 'function')) {
+        return false;
+    }
+
+    function isNumeric (num) {
+        return !isNaN(parseFloat(num)) && isFinite(num);
+    }
+
+    function isPasswordValid (password){
+        if (typeof password != 'string' || password.length < 6) {
+            return false;
+        }
+
+        for (var i = 0; i < password.length; i++) {
+            if (isNumeric (password[i])){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    var isValid = isPasswordValid(password);
+    if (isValid) {
+        return success();
+    }
+
+    return error();
+}
+
+var success = function(){
+    console.log ('Your password is valid');
+}
+
+var error = function(){
+    console.log('Your password is invalid');
+}
+
+passwordChecker('jshdsjhd', success, error);
+
+7.
+
+function checkType(data, type){
+    if (!data || typeof data != type){
+        return false;
+    }
+
+    return true;
+}
+
+var filter = function (input, conditionChecker) {
+    if (!checkType(conditionChecker, 'function') || !input || input.length == 0) {
+        return input;
+    }
+
+    var result = [];
+    for (var i =0; i<input.length; i++) {
+        if (!conditionChecker(input[i])) {
+            continue;
+        }
+
+        result.push(input[i]);
+    }
+
+    return result;
+}
+
+function checkElement(element) {
+    return element >= 20;
+}
+
+console.log(filter([5, 8, 25, 85], checkElement));
