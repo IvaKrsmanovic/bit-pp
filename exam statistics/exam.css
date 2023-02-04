@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(./exam.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+form {
+    background-color: rgb(247,247,247);
+    border: 1;
+    border-color: darkgrey;
+    padding: 0.5%;
+}
+
+
+#student-grade-failed {
+    color: red;
+}
+
+#failedNo {
+    color: red;
+}
+
+#failedPerc {
+    color: red;
+}
