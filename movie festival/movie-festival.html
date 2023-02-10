@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script type="module" src="movie-festival.js"></script>
+    <link rel="stylesheet" href="./movie-festival.css">
+    <title>Movie festival</title>
+</head>
+
+<body>
+
+    <h3>Movie festival</h3>
+    <form id="form">
+        <fieldset name="movie">
+            <p>
+                Please fill in the form
+            </p>
+            <p>
+                Movie
+            </p>
+
+            <fieldset class="fieldsetBorder">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" placeholder="Title" required>
+
+                <label for="length">Length (min)</label>
+                <input type="number" name="length" id="length" placeholder="Length in min" required>
+
+                <select name="genre" id="genre">
+                    <option value="default" selected>-</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="drama">Drama</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="romance">Romance</option>
+                </select>
+
+                <input type="button" id="createButton" value="Create movie">
+
+                <ul id="output">
+
+                </ul>
+
+            </fieldset>
+            <p>
+                Program
+            </p>
+            <fieldset class="fieldsetBorder">
+                <label for="date">Date</label>
+                <input type="date" name="programDate" id="programDate">
+
+                <input type="button" name="createProgram" id="createProgram" value="Create program">
+
+                <ul id="programList">
+
+                </ul>
+
+                <label for="movieSelect">Movie</label>
+                <select name="movieSelect" id="movieSelect">
+                    <option>-</option>
+                </select>
+
+                <label for="programSelect">Program</label>
+                <select name="programSelect" id="programSelect">
+                    <option>-</option>
+                </select>
+
+                <input type="button" id="addMovieToProgram" value="Add movie to program">
+            </fieldset>
+
+        </fieldset>
+
+    </form>
+
+</body>
+
+</html>
