@@ -16,6 +16,7 @@ Array.prototype.hasElement = function (arrElement) {
 
 window.movies = [];
 window.programs = [];
+window.festivals = [];
 window.addedPrograms = [];
 
 $(document).ready(function () {
@@ -91,7 +92,10 @@ $(document).ready(function () {
                     alert('Movie already in program!')
                 } else {
                     window.programs[i].addMovie(movieSelectedObj)
-                    addOptionProgram = $(`<li> ${window.programs[i].getData()} </li>`)
+                    festival = new Festival ();
+                    festival.addProgram(window.programs[i])
+                    
+                    addOptionProgram = $(`<li> ${window.festival[i].getData()} </li>`)
                     if (window.addedPrograms.includes(window.programs[i].date.toString())) {
                         $("#programList").html(addOptionProgram)
                     } else {

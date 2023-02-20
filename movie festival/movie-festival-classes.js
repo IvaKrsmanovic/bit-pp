@@ -50,9 +50,12 @@ export class Program {
 }
 
 export class Festival {
-    constructor (name) {
-        this.name = name;
+    constructor () {
         this.listOfPrograms = [];
+    }
+
+    addProgram(program) {
+        this.listOfPrograms.push(program);        
     }
 
     getMovieCount () {
@@ -68,11 +71,10 @@ export class Festival {
     }
 
     getData () {
-        var festivalName = this.name;
         var programs = this.listOfPrograms;
         var totalMovieCount = this.getMoviesCount();
     
-        var outputStr = festivalName + " has " + totalMovieCount + " movie titles\n"
+        var outputStr = totalMovieCount + " movie titles\n"
     
         for (var i = 0; i < programs.length; i++) {
             var program = programs[i];

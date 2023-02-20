@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.center {
+    width: 100%;
+}
+
+.container {
+    margin-top: 1%;
+    display: inline-block;
+    width: 100%;
+}
+
+.bit-show {
+    width: 30%;
+    float: left;
+    margin-left: 3%;
+}
+
+.wrapper {
+    position: absolute;
+    z-index: 10;
+    right: 12%;
+    width: 20%;
+    /* margin: 0 auto; */
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.15);
+}
+
+input {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 1%;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    outline: none;
+}
+
+.results {
+    padding: 0px;
+}
+
+.results ul {
+    margin: 0;
+    padding: 0;
+}
+
+.results ul li {
+    list-style: none;
+    border-radius: 3px;
+    opacity: 0;
+    display: none;
+    padding: 1%;
+    transition: all .5s linear;
+}
+
+.show .results ul li {
+
+    opacity: 1;
+    display: block;
+}
+
+.show .results {
+
+    padding: 10px;
+}
+
+.results ul li:hover {
+    background: #ececec;
+    cursor: pointer;
+}
+
+.results ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    z-index: -1;
+}
+
+h4 {
+    margin-bottom: 1%;
+}
+
+#pic {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-end;
+}
+
+#showImg {
+    width: 60%;
+    height: auto;
+    align-self: flex-end;
+}
+
+#info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+#summary {
+    padding-left: 25%;
+    padding-right: 25%;
+    margin-top: 1%;
+}
+
+ul li {
+    text-align: left
+}
+
+.title {
+    font-size: large;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-left: -1%;
+    margin-bottom: 1%;
+}
+
+.btndiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+#inputHere {
+    margin-left: 8%;
+}
